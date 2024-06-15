@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: ekea
+    environment:
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: postgresql
+      POSTGRES_DB: ekea_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
